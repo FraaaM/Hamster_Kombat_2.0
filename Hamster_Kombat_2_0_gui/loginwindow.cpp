@@ -19,19 +19,18 @@ LoginWindow::LoginWindow(QWidget *parent) : QWidget(parent) {
     passwordInput->setEchoMode(QLineEdit::Password);  // Скрываем вводимые символы пароля
 
     loginButton = new QPushButton("Войти", this);
-    //quitButton = new QPushButton("Выйти", this);
+    quitButton = new QPushButton("Выйти", this);
 
     // Размещаем виджеты на форме в вертикальном макете
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(usernameInput);
     layout->addWidget(passwordInput);
     layout->addWidget(loginButton);
-    //layout->addWidget(quitButton);
+    layout->addWidget(quitButton);
     setLayout(layout);
 
-    // Связываем кнопку входа с методом проверки логина
     connect(loginButton, &QPushButton::clicked, this, &LoginWindow::onLoginClicked);
-    //connect(quitButton, &QPushButton::clicked, qApp, &QApplication::quit);
+    connect(quitButton, &QPushButton::clicked, this, &LoginWindow::close);
 }
 
 void LoginWindow::onLoginClicked() {

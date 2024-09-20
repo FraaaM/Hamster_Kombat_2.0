@@ -16,9 +16,10 @@ private slots:
     void handleButtonClick();  // Обработчик нажатия кнопки
 
 private:
-    uint clickCount;         // Счётчик нажатий111
+    uint clickCount;
     QLabel *clickLabel;     // Метка для отображения счётчика
-    QPushButton *clickButton; // Кнопка для нажатий
+    QPushButton *clickButton;
+    QPushButton *quitButton;
 };
 
 #endif // GAMEWINDOW_H
