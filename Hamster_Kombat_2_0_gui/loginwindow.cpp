@@ -16,12 +16,12 @@ LoginWindow::LoginWindow(QWidget *parent) : QWidget(parent) {
 
     passwordInput = new QLineEdit(this);
     passwordInput->setPlaceholderText("Введите пароль");
-    passwordInput->setEchoMode(QLineEdit::Password);  // Скрываем вводимые символы пароля
+    passwordInput->setEchoMode(QLineEdit::Password);  // Скрываем символы
 
     loginButton = new QPushButton("Войти", this);
     quitButton = new QPushButton("Выйти", this);
 
-    // Размещаем виджеты на форме в вертикальном макете
+    // виджеты в вертикальном макете
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(usernameInput);
     layout->addWidget(passwordInput);
@@ -38,7 +38,7 @@ void LoginWindow::onLoginClicked() {
     QString password = passwordInput->text();
 
     if (username == "1" && password == "1") {
-        QMessageBox::information(this, "Успех", "Добро пожаловать!");
+        QMessageBox::information(this, "Успех!", "Добро пожаловать!");
 
         GameWindow *gameWindow = new GameWindow();
         gameWindow->show();
